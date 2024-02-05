@@ -1,0 +1,139 @@
+:root {
+  --bd-purple-rgb: 58, 14, 67;
+  --bd-purple2-rgb: 92, 33, 98;
+  --bd-yellow-rgb: 242, 235, 33;
+  --bd-yellowDarker-rgb: 222, 215, 13;
+  --bd-pink-rgb: 240, 2, 144;
+}
+
+li {
+  list-style: none !important;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: rgb(var(--bd-pink-rgb)) !important;
+}
+
+::selection {
+  color: white;
+  background: rgb(var(--bd-pink-rgb)) !important;
+}
+
+
+.btn-purple2,
+.btn-purple2:hover,
+.btn-purple2:active,
+.btn-purple2:visited {
+  background-color: rgb(var(--bd-purple2-rgb)) !important;
+}
+
+
+.btn-pink,
+.btn-pink:hover,
+.btn-pink:active,
+.btn-pink:visited {
+  background-color: rgb(var(--bd-pink-rgb)) !important;
+}
+
+
+* {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  max-width: 100svw;
+  overflow-x: hidden;
+}
+
+.bg-purple {
+  background-color: rgb(var(--bd-purple-rgb));
+}
+
+.bg-purple2 {
+  background-color: rgb(var(--bd-purple2-rgb));
+}
+
+
+.bg-pink {
+  background-color: rgb(var(--bd-pink-rgb));
+}
+
+
+.bg-yellow {
+  background-color: rgb(var(--bd-yellow-rgb));
+}
+
+.bg-yellow-gradient {
+  background-image: linear-gradient(rgba(var(--bd-yellow-rgb), 1), rgba(var(--bd-yellow-rgb), 0.45));
+}
+
+
+.text-purple {
+  color: rgb(var(--bd-purple-rgb));
+}
+
+.text-purple2 {
+  color: rgb(var(--bd-purple2-rgb));
+}
+
+.text-yellow {
+  color: rgb(var(--bd-yellow-rgb));
+}
+
+.text-pink {
+  color: rgb(var(--bd-pink-rgb));
+}
+
+.acai-card {
+  transition: transform .1s linear;
+}
+
+.acai-card:hover {
+  box-shadow: none !important;
+  transform: scale(.99);
+}
+
+#navbarOpcoesPedido .btn {
+  width: 170px !important;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  user-select: none !important;
+}
+
+nav {
+  background-color: rgba(var(--bd-purple-rgb), 1);
+}
+
+.section-title {
+  background-image: linear-gradient(rgba(var(--bd-yellow-rgb), 1), rgba(var(--bd-yellow-rgb), .9));
+  padding: 1.2rem 0rem 1.2rem 2rem;
+  font-weight: lighter;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+
+.pointer {
+  cursor: pointer;
+}
+
+.modal-button {
+  height: 40px;
+}
+
+.user-select-none {
+  user-select: none !important;
+}
+
+.addon-price {
+  font-size: 10px !important;
+  user-select: none !important;
+}
