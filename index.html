@@ -66,7 +66,8 @@
     <div class="d-flex justify-content-center gap-4">
       <div class="row col-12 col-lg-9 col-xl-9 justify-content-center">
         <section class="row col-12 mb-5 px-0 px-lg-2 px-xl-2">
-          <h2 class="section-title text-pink mb-3 text-start px-2 px-lg-5 px-xl-5 fw-bolder shadow shadow-lg rounded">
+          <h2
+            class="section-title text-pink mb-3 text-start px-2 px-lg-5 px-xl-5 fw-bolder shadow shadow-sm  rounded-0">
             Self Service
           </h2>
 
@@ -76,7 +77,8 @@
           </div>
         </section>
         <section class="row col-12 mb-5 px-0 px-lg-2 px-xl-2">
-          <h2 class="section-title text-pink mb-3 text-start px-2 px-lg-5 px-xl-5 fw-bolder shadow shadow-lg rounded">
+          <h2
+            class="section-title text-pink mb-3 text-start px-2 px-lg-5 px-xl-5 fw-bolder shadow shadow-sm  rounded-0">
             Copos
             Prontos</h2>
 
@@ -90,7 +92,7 @@
     </div>
   </main>
 
-  <!-- Modal -->
+  <!-- Modal item SELECT -->
   <div class="modal fade rounded-0" id="modalItemSelect" tabindex="-1" aria-labelledby="modalItemSelect"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl rounded-0 modal-dialog-scrollable">
@@ -106,7 +108,7 @@
         <div class="modal-footer border-0 d-flex justify-content-end gap-2">
           <div style="width: 90px !important; max-width: 90px !important; box-sizing: border-box;"
             class="modal-button row p-0 m-0 border justify-content-center align-items-center">
-            <button style="transform: scale(.8)" id="decreaseItemCount" type="button" tabindex="0"
+            <button style="transform: scale(.8)" id="modalItemSelectDecreaseItemCount" type="button" tabindex="0"
               class="col-2 m-0 p-0 d-flex justify-content-center align-items-center btn border-0" aria-hidden="false"
               aria-label="Reduzir quantidade" disabled=""><span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -117,7 +119,7 @@
               </span>
             </button>
             <span id="modalItemSelectAmount" class="col-6 text-center">1</span>
-            <button style="transform: scale(.8)" id="increaseItemCount" type="button" tabindex="0"
+            <button style="transform: scale(.8)" id="modalItemSelectIncreaseItemCount" type="button" tabindex="0"
               class="col-2 m-0 p-0 d-flex justify-content-center align-items-center btn border-0" aria-hidden="false"
               aria-label="Aumentar quantidade">
               <span>
@@ -138,6 +140,55 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal item EDIT -->
+  <div class="modal fade rounded-0" id="modalItemEdit" tabindex="-1" aria-labelledby="modalItemEdit" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl rounded-0 modal-dialog-scrollable">
+      <div class="modal-content rounded-0 border border-2">
+        <div class="modal-header border-0">
+          <h1 class="modal-title fs-5 text-purple2" id="modalItemEditTitle"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div id="modalItemEditAddons" class="modal-body px-0 py-0 m-0" style="min-height: 70svh !important;">
+        </div>
+
+        <div class="modal-footer border-0 d-flex justify-content-end gap-2">
+          <div style="width: 90px !important; max-width: 90px !important; box-sizing: border-box;"
+            class="modal-button row p-0 m-0 border justify-content-center align-items-center">
+            <button style="transform: scale(.8)" id="decreaseItemCount" type="button" tabindex="0"
+              class="col-2 m-0 p-0 d-flex justify-content-center align-items-center btn border-0" aria-hidden="false"
+              aria-label="Reduzir quantidade" disabled=""><span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="#f00290" fill-rule="evenodd"
+                    d="M17.993 11c.556 0 1.007.444 1.007 1 0 .552-.45 1-1.007 1H6.007A1.001 1.001 0 0 1 5 12c0-.552.45-1 1.007-1h11.986z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+            <span id="modalItemEditAmount" class="col-6 text-center">1</span>
+            <button style="transform: scale(.8)" id="increaseItemCount" type="button" tabindex="0"
+              class="col-2 m-0 p-0 d-flex justify-content-center align-items-center btn border-0" aria-hidden="false"
+              aria-label="Aumentar quantidade">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="#f00290" fill-rule="evenodd"
+                    d="M13 11h4.993c.556 0 1.007.444 1.007 1 0 .552-.45 1-1.007 1H13v4.993C13 18.55 12.556 19 12 19c-.552 0-1-.45-1-1.007V13H6.007A1.001 1.001 0 0 1 5 12c0-.552.45-1 1.007-1H11V6.007C11 5.45 11.444 5 12 5c.552 0 1 .45 1 1.007V11z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <button onclick="addCurrentItem()" data-bs-dismiss="modal" style="width: 200px !important;" type="button"
+            class="modal-button btn rounded-0 btn-lg btn-pink text-white d-flex gap-4 justify-content-between align-items-center fw-bold px-3 py-2"><span
+              style="font-size: 14px;">Editar</span>
+            <span style="font-size: 14px;" id="modalItemEditPrice"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="offcanvas offcanvas-end" data-bs-scroll="false" tabindex="-1" id="offcanvasCartOrder"
     aria-labelledby="offcanvasCartOrderLabel">
