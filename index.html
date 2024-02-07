@@ -21,12 +21,12 @@
 
         <div style="width: 340px; position: relative; display: flex; flex-direction: column;"
           class="navbar-brand col-12 col-lg-1 col-xl-1 mb-4 mb-lg-0 mb-xl-0 text-center text-white">
-          <a target="_blank" href="https://www.instagram.com/pacaidelivery1/">
+          <a class="instagram-link" href="https://www.instagram.com/pacaidelivery1/">
             <img src="./assets/acai-logo.png" class="img-fluid border border-4 rounded shadow" alt="">
           </a>
           <span class="position-absolute bottom-0 start-50 translate-middle badge rounded-pill bg-yellow text-pink"
             style="transform: translateY(10px) rotate(-3deg) !important;">
-            <a class="text-pink" target="_blank" href="https://www.instagram.com/pacaidelivery1/">@pacaidelivery1</a>
+            <a class="text-pink instagram-link" href="https://www.instagram.com/pacaidelivery1/">@pacaidelivery1</a>
           </span>
         </div>
 
@@ -209,8 +209,24 @@
   <script src="./bundle.min.js"></script>
 
   <script>
+    function isMobileDevice() {
+      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    }
+
+    function setInstagramLink(anchorElement) {
+      if (isMobileDevice()) {
+        anchorElement.href = "instagram://user?username=pacaidelivery1";
+      } else {
+        anchorElement.href = "https://www.instagram.com/pacaidelivery1";
+        anchorElement.setAttribute('target', '_blank');
+      }
+    }
+
+
     window.addEventListener('load', () => {
       initStore();
+
+      document.querySelectorAll('.instagram-link').forEach(el => setInstagramLink(el));
     })
   </script>
 </body>
