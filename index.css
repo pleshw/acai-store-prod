@@ -96,7 +96,6 @@ body {
 }
 
 #navbarOpcoesPedido .btn {
-  width: 170px !important;
   height: 40px !important;
   display: flex;
   align-items: center;

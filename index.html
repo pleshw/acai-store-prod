@@ -46,10 +46,11 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-2 col-xl-2 d-flex d-lg-flex d-xl-flex justify-content-center mt-3 mt-lg-0 mt-xl-0"
+        <div
+          class="col-12 col-lg-2 col-xl-2 p-0 px-lg-5 px-xl-5 d-flex d-lg-flex d-xl-flex justify-content-center mt-3 mt-lg-0 mt-xl-0"
           id="navbarOpcoesPedido">
           <button type="button"
-            class="btn btn-sm btn-light rounded-0 border border-1 d-flex justify-content-around align-items-center"
+            class="btn btn-sm btn-light rounded-0 border border-1 d-flex justify-content-around align-items-center w-100"
             data-bs-toggle="offcanvas" data-bs-target="#offcanvasCartOrder" aria-controls="offcanvasCartOrder">
             <span class="fw-bold text-purple2">🛍️ Pedido </span>
             <div class="vr"></div>
@@ -92,7 +93,7 @@
   <!-- Modal -->
   <div class="modal fade rounded-0" id="modalItemSelect" tabindex="-1" aria-labelledby="modalItemSelect"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg rounded-0 modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-xl rounded-0 modal-dialog-scrollable">
       <div class="modal-content rounded-0 border border-2">
         <div class="modal-header border-0">
           <h1 class="modal-title fs-5 text-purple2" id="modalItemSelectTitle"></h1>
@@ -100,9 +101,6 @@
         </div>
 
         <div id="modalItemSelectAddons" class="modal-body px-0 py-0 m-0" style="min-height: 70svh !important;">
-          <section>
-            <h5 class="bg-body-secondary text-purple p-3 shadow-sm border-bottom">Cremes e sorvetes</h5>
-          </section>
         </div>
 
         <div class="modal-footer border-0 d-flex justify-content-end gap-2">
@@ -157,7 +155,7 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <script src="js/bundle.min.js"></script>
+  <script src="./bundle.min.js"></script>
 
   <script>
     window.addEventListener('load', () => {
