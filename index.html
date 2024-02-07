@@ -209,25 +209,9 @@
   <script src="./bundle.min.js"></script>
 
   <script>
-    function isMobileDevice() {
-      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    }
-
-    function setInstagramLink(anchorElement) {
-      if (isMobileDevice()) {
-        anchorElement.href = "instagram://user?username=pacaidelivery1";
-      } else {
-        anchorElement.href = "https://www.instagram.com/pacaidelivery1";
-        anchorElement.setAttribute('target', '_blank');
-      }
-    }
-
-
     window.addEventListener('load', () => {
       initStore();
-
-      document.querySelectorAll('.instagram-link').forEach(el => setInstagramLink(el));
-    })
+    });
   </script>
 </body>
 
