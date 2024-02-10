@@ -37,6 +37,13 @@ li {
   background-color: rgb(var(--bd-pink-rgb)) !important;
 }
 
+.nav-link {
+  color: rgb(var(--bd-pink-rgb));
+}
+
+.nav-link.active {
+  color: rgb(var(--bd-pink-rgb)) !important;
+}
 
 * {
   font-family: Helvetica, sans-serif;

@@ -223,54 +223,96 @@
     <div class="modal-dialog modal-dialog-centered modal-xl rounded-0 modal-dialog-scrollable border-0">
       <div class="modal-content rounded-0 border border-2">
 
-        <div id="modalCompleteOrderAddress" class="modal-body">
-          <div class="row justify-content-center h-100">
-            <div class="col-12 col-lg-5 col-xl-5">
-              <h5 class="text-center mb-3">Inserir endereço</h5>
-              <div>
-                <div class="mb-3">
-                  <label for="inputDeliveryInfoStreet" class="form-label">Rua e número</label>
-                  <input type="text" class="form-control rounded-0" id="inputDeliveryInfoStreet"
-                    aria-describedby="emailHelp">
-                  <div id="inputDeliveryInfoHelpStreet" class="form-text">
-                    <span class="text-muted">
-                      <u><i>Por
-                          exemplo: Rua
-                          Frei
-                          Miguelinho, 100</i></u>
-                    </span>
+        <ul class="nav nav-tabs rounded-0" id="myTab" role="tablist">
+          <li class="nav-item rounded-0" role="presentation">
+            <button class="nav-link rounded-0 py-4 py-lg-2 py-xl-3 fw-bolder active" id="address-tab"
+              data-bs-toggle="tab" data-bs-target="#address-tab-pane" type="button" role="tab"
+              aria-controls="address-tab-pane" aria-selected="true">Endereço</button>
+          </li>
+          <li class="nav-item rounded-0" role="presentation">
+            <button class="nav-link rounded-0 py-4 py-lg-2 py-xl-3 fw-bolder d-block d-lg-none d-xl-none"
+              id="saved-address-tab" data-bs-toggle="tab" data-bs-target="#mobile-saved-address-tab-pane" type="button"
+              role="tab" aria-controls="mobile-saved-address-tab-pane" aria-selected="false">Endereços Salvos</button>
+          </li>
+          <li class="nav-item rounded-0" role="presentation">
+            <button class="nav-link rounded-0 py-4 py-lg-2 py-xl-3 fw-bolder" id="payment-tab" data-bs-toggle="tab"
+              data-bs-target="#payment-tab-pane" type="button" role="tab" aria-controls="payment-tab-pane" disabled
+              aria-selected="false">Forma de
+              Pagamento</button>
+          </li>
+        </ul>
+        <div class="tab-content modal-body" id="modalCompleteOrderTabContents">
+          <div class="tab-pane fade show active" id="address-tab-pane" role="tabpanel" aria-labelledby="address-tab"
+            tabindex="0">
+            <div id="modalCompleteOrderAddress">
+              <div class="row justify-content-center h-100">
+                <div class="col-12 col-lg-5 col-xl-5">
+                  <h5 class="text-center mb-3">Inserir endereço</h5>
+                  <div>
+                    <div class="mb-3">
+                      <label for="inputDeliveryInfoStreet" class="form-label">Rua e número</label>
+                      <input type="text" class="form-control rounded-0" id="inputDeliveryInfoStreet"
+                        aria-describedby="emailHelp">
+                      <div id="inputDeliveryInfoHelpStreet" class="form-text">
+                        <span class="text-muted">
+                          <u><i>Por
+                              exemplo: Rua
+                              Frei
+                              Miguelinho, 100</i></u>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputDeliveryInfoName" class="form-label">Seu nome</label>
+                      <input type="text" class="form-control rounded-0" id="inputDeliveryInfoName">
+                      <div id="inputDeliveryInfoHelpName" class="form-text"><span class="text-muted">
+                          <u><i>Insira seu
+                              nome ou o
+                              da pessoa que vai receber o pedido</i></u>
+                        </span></div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputDeliveryInfoPhone" class="form-label">Celular ou telefone</label>
+                      <input type="text" class="form-control rounded-0" id="inputDeliveryInfoPhone">
+                      <div id="inputDeliveryInfoHelpPhone" class="form-text"><span class="text-muted">
+                          <u><i>Insira um número de celular para ligarmos quando seu pedido chegar!</i></u>
+                        </span></div>
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" checked id="inputDeliveryInfoSaveAddress">
+                      <label class="form-check-label" for="inputDeliveryInfoSaveAddress">Salvar endereço para próximos
+                        pedidos</label>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-center">
+                    <button onclick="tryUnlockPaymentInfo()" id="modalCompleteOrderButtonConfirm"
+                      style="width: 200px !important;" type="button"
+                      class="modal-button btn rounded-0 btn-lg btn-pink text-white d-flex gap-4 justify-content-center align-items-center fw-bold px-3 py-2 bg-gradient">
+                      <span style="font-size: 14px;">Confirmar Endereço</span>
+                    </button>
                   </div>
                 </div>
-                <div class="mb-3">
-                  <label for="inputDeliveryInfoName" class="form-label">Seu nome</label>
-                  <input type="text" class="form-control rounded-0" id="inputDeliveryInfoName">
-                  <div id="inputDeliveryInfoHelpName" class="form-text"><span class="text-muted">
-                      <u><i>Insira seu
-                          nome ou o
-                          da pessoa que vai receber o pedido</i></u>
-                    </span></div>
+                <div class="d-none d-lg-flex d-xl-flex col-1 m-0 p-0 justify-content-center">
+                  <div class="vr"></div>
                 </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" checked id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Salvar endereço para próximos pedidos</label>
+                <div class="d-none d-lg-block d-xl-block col-12 col-lg-5 col-xl-5">
+                  <h5 class="text-center mb-3">Usar um endereço salvo</h5>
+                  <div class="customer-saved-addresses">
+
+                  </div>
                 </div>
               </div>
-              <div class="col-12 d-flex justify-content-center">
-                <button id="modalCompleteOrderButtonConfirm" data-bs-dismiss="modal" style="width: 200px !important;"
-                  type="button"
-                  class="modal-button btn rounded-0 btn-lg btn-pink text-white d-flex gap-4 justify-content-center align-items-center fw-bold px-3 py-2 bg-gradient">
-                  <span style="font-size: 14px;">Confirmar Endereço</span>
-                </button>
-              </div>
             </div>
-            <div class="d-none d-lg-flex d-xl-flex col-1 m-0 p-0 justify-content-center">
-              <div class="vr"></div>
-            </div>
-            <div class="d-none d-lg-block d-xl-block col-12 col-lg-5 col-xl-5">
-              <h5 class="text-center">Usar um endereço salvo</h5>
+          </div>
+          <div class="tab-pane fade" id="mobile-saved-address-tab-pane" role="tabpanel"
+            aria-labelledby="saved-address-tab" tabindex="0">
+            <h5 class="text-center mb-3">Usar um endereço salvo</h5>
+            <div class="customer-saved-addresses">
 
             </div>
           </div>
+          <div class="tab-pane fade" id="payment-tab-pane" role="tabpanel" aria-labelledby="payment-tab" tabindex="0">
+            ...</div>
         </div>
       </div>
     </div>
@@ -290,7 +332,8 @@
 
         </ul>
         <div class="row col-12 mt-2">
-          <button class="btn btn-success rounded-0 p-2" data-bs-toggle="modal" data-bs-target="#modalCompleteOrder">
+          <button class="btn btn-success rounded-0 p-2" id="buttonCompleteOrder" data-bs-toggle="modal"
+            data-bs-target="#modalCompleteOrder">
             <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
               Finalizar
               Pedido
