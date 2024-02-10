@@ -20,7 +20,7 @@ Visite nosso website [P'Açaí Shop](https://pacai.shop/) para fazer seu pedido 
 
 ## Contate-nos
 
-Tem alguma dúvida ou feedback? Adoraríamos ouvir de você! Entre em contato conosco pelo e-mail [info@pacai.shop](mailto:pleshw@outlook.com) ou ligue para [(84) 992100295](tel:84992100295).
+Tem alguma dúvida ou feedback? Adoraríamos ouvir de você! Entre em contato conosco pelo e-mail [pleshw@outlook.com](mailto:pleshw@outlook.com) ou ligue para [(84) 992100295](tel:84992100295).
 
 Siga-nos nas redes sociais para atualizações e promoções:
 - [Instagram](https://instagram.com/pacaidelivery1)
