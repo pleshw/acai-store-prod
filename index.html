@@ -104,7 +104,7 @@
         </li>
         <li class="ms-3 d-flex justify-content-center align-items-center">
           <a class="text-purple2 whatsapp-link"
-            whatsapp-message="Olá, estou entrando em contato para tirar uma dúvida sobre o aplicativo!">
+            whatsapp-message="Olá, estou entrando em contato para tirar uma dúvida sobre o aplicativo de delivery!">
             <svg class="bi" width="24" height="24">
               <use xlink:href="#whatsapp"></use>
             </svg>
@@ -185,7 +185,7 @@
         <div class="modal-footer border-0 border-top d-flex justify-content-end gap-2 rounded-0">
           <div style="width: 90px !important; max-width: 90px !important; box-sizing: border-box;"
             class="modal-button row p-0 m-0 border justify-content-center align-items-center">
-            <button style="transform: scale(.8)" id="decreaseItemCount" type="button" tabindex="0"
+            <button style="transform: scale(.8)" id="modalItemEditDecreaseItemCount" type="button" tabindex="0"
               class="col-2 m-0 p-0 d-flex justify-content-center align-items-center btn border-0" aria-hidden="false"
               aria-label="Reduzir quantidade" disabled=""><span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -196,7 +196,7 @@
               </span>
             </button>
             <span id="modalItemEditAmount" class="col-6 text-center">1</span>
-            <button style="transform: scale(.8)" id="increaseItemCount" type="button" tabindex="0"
+            <button style="transform: scale(.8)" id="modalItemEditIncreaseItemCount" type="button" tabindex="0"
               class="col-2 m-0 p-0 d-flex justify-content-center align-items-center btn border-0" aria-hidden="false"
               aria-label="Aumentar quantidade">
               <span>
@@ -209,10 +209,68 @@
             </button>
           </div>
 
-          <button onclick="addCurrentItem()" data-bs-dismiss="modal" style="width: 200px !important;" type="button"
+          <button id="modalItemEditButtonConfirm" data-bs-dismiss="modal" style="width: 200px !important;" type="button"
             class="modal-button btn rounded-0 btn-lg btn-pink text-white d-flex gap-4 justify-content-between align-items-center fw-bold px-3 py-2 bg-gradient"><span
               style="font-size: 14px;">Editar</span>
             <span style="font-size: 14px;" id="modalItemEditPrice"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade rounded-0" id="modalCompleteOrder" tabindex="-1" aria-labelledby="modalCompleteOrder"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl rounded-0 modal-dialog-scrollable border-0">
+      <div class="modal-content rounded-0 border border-2">
+
+        <div id="modalCompleteOrderAddress" class="modal-body">
+          <div class="row justify-content-center h-100">
+            <div class="col-12 col-lg-5 col-xl-5">
+              <h5 class="text-center mb-3">Inserir endereço</h5>
+              <div>
+                <div class="mb-3">
+                  <label for="inputDeliveryInfoStreet" class="form-label">Rua e número</label>
+                  <input type="text" class="form-control rounded-0" id="inputDeliveryInfoStreet"
+                    aria-describedby="emailHelp">
+                  <div id="inputDeliveryInfoHelpStreet" class="form-text">
+                    <span class="text-muted">
+                      <u><i>Por
+                          exemplo: Rua
+                          Frei
+                          Miguelinho, 100</i></u>
+                    </span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="inputDeliveryInfoName" class="form-label">Seu nome</label>
+                  <input type="text" class="form-control rounded-0" id="inputDeliveryInfoName">
+                  <div id="inputDeliveryInfoHelpName" class="form-text"><span class="text-muted">
+                      <u><i>Insira seu
+                          nome ou o
+                          da pessoa que vai receber o pedido</i></u>
+                    </span></div>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" checked id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Salvar endereço para próximos pedidos</label>
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button id="modalCompleteOrderButtonConfirm" data-bs-dismiss="modal" style="width: 200px !important;"
+                  type="button"
+                  class="modal-button btn rounded-0 btn-lg btn-pink text-white d-flex gap-4 justify-content-center align-items-center fw-bold px-3 py-2 bg-gradient">
+                  <span style="font-size: 14px;">Confirmar Endereço</span>
+                </button>
+              </div>
+            </div>
+            <div class="d-none d-lg-flex d-xl-flex col-1 m-0 p-0 justify-content-center">
+              <div class="vr"></div>
+            </div>
+            <div class="d-none d-lg-block d-xl-block col-12 col-lg-5 col-xl-5">
+              <h5 class="text-center">Usar um endereço salvo</h5>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -232,7 +290,7 @@
 
         </ul>
         <div class="row col-12 mt-2">
-          <button class="btn btn-success rounded-0 p-2">
+          <button class="btn btn-success rounded-0 p-2" data-bs-toggle="modal" data-bs-target="#modalCompleteOrder">
             <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
               Finalizar
               Pedido
@@ -273,12 +331,6 @@
     crossorigin="anonymous"></script>
 
   <script src="./bundle.min.js"></script>
-
-  <script>
-    window.addEventListener('load', () => {
-      initStore();
-    });
-  </script>
 </body>
 
 </html>
