@@ -80,7 +80,7 @@
           <h2
             class="section-title text-pink mb-3 text-start px-2 px-lg-5 px-xl-5 fw-bolder shadow shadow-sm  rounded-0">
             Copos
-            Prontos</h2>
+            Favoritos</h2>
 
 
           <div id="coposProntos" class="row col-12 w-100 py-0 px-0 px-lg-3 px-xl-3 m-0 justify-content-center">
@@ -225,20 +225,21 @@
 
         <ul class="nav nav-tabs rounded-0" id="myTab" role="tablist">
           <li class="nav-item rounded-0" role="presentation">
-            <button class="nav-link rounded-0 py-4 py-lg-2 py-xl-3 fw-bolder active" id="address-tab"
+            <button class="nav-link rounded-0 py-2 py-lg-2 py-xl-3 fw-bolder active" id="address-tab"
               data-bs-toggle="tab" data-bs-target="#address-tab-pane" type="button" role="tab"
-              aria-controls="address-tab-pane" aria-selected="true">Endereço</button>
+              aria-controls="address-tab-pane" aria-selected="true"><small>Endereço</small></button>
           </li>
           <li class="nav-item rounded-0" role="presentation">
-            <button class="nav-link rounded-0 py-4 py-lg-2 py-xl-3 fw-bolder d-block d-lg-none d-xl-none"
+            <button class="nav-link rounded-0 py-2 py-lg-2 py-xl-3 fw-bolder d-block d-lg-none d-xl-none"
               id="saved-address-tab" data-bs-toggle="tab" data-bs-target="#mobile-saved-address-tab-pane" type="button"
-              role="tab" aria-controls="mobile-saved-address-tab-pane" aria-selected="false">Endereços Salvos</button>
+              role="tab" aria-controls="mobile-saved-address-tab-pane" aria-selected="false"><small>Endereços
+                Salvos</small></button>
           </li>
           <li class="nav-item rounded-0" role="presentation">
-            <button class="nav-link rounded-0 py-4 py-lg-2 py-xl-3 fw-bolder" id="payment-tab" data-bs-toggle="tab"
+            <button class="nav-link rounded-0 py-2 py-lg-2 py-xl-3 fw-bolder" id="payment-tab" data-bs-toggle="tab"
               data-bs-target="#payment-tab-pane" type="button" role="tab" aria-controls="payment-tab-pane" disabled
-              aria-selected="false">Forma de
-              Pagamento</button>
+              aria-selected="false"><small>Forma de
+                Pagamento</small></button>
           </li>
         </ul>
         <div class="tab-content modal-body" id="modalCompleteOrderTabContents">
@@ -247,7 +248,7 @@
             <div id="modalCompleteOrderAddress">
               <div class="row justify-content-center h-100">
                 <div class="col-12 col-lg-5 col-xl-5">
-                  <h5 class="text-center mb-3">Inserir endereço</h5>
+                  <h5 class="text-center mb-3 d-none d-lg-block d-xl-block">Inserir endereço</h5>
                   <div>
                     <div class="mb-3">
                       <label for="inputDeliveryInfoStreet" class="form-label">Rua e número</label>
@@ -306,13 +307,50 @@
           </div>
           <div class="tab-pane fade" id="mobile-saved-address-tab-pane" role="tabpanel"
             aria-labelledby="saved-address-tab" tabindex="0">
-            <h5 class="text-center mb-3">Usar um endereço salvo</h5>
+            <h5 class="text-center mb-3 d-none d-lg-block d-xl-block">Usar um endereço salvo</h5>
             <div class="customer-saved-addresses">
 
             </div>
           </div>
           <div class="tab-pane fade" id="payment-tab-pane" role="tabpanel" aria-labelledby="payment-tab" tabindex="0">
-            ...</div>
+            <div class="row justify-content-center px-0 px-lg-5 px-xl-5  py-2">
+              <div class="px-0 px-lg-5 px-xl-5 row justify-content-center col-12">
+                <div class="col-12 input-group mb-3">
+                  <label class="input-group-text rounded-0" for="inputGroupSelect01">Formas de Pagamento</label>
+                  <select class="form-select rounded-0 form-select-lg " aria-label="Selecione o método de pagamento."
+                    name="paymentMethodSelect" id="paymentMethodSelect">
+                    <option value="pix">Pix</option>
+                    <option value="money">Dinheiro</option>
+                    <option value="creditCard">Cartão de Crédito</option>
+                    <option value="debitCard">Cartão de Débito</option>
+                  </select>
+                </div>
+                <div id="askIsChangeNeeded" class="mb-3 d-none border p-5 col-11 col-lg-12 col-xl-12 shadow shadow-md">
+                  <label for="inputChangeNeededValue" class="form-label">Troco (Opcional)</label>
+                  <input type="text" class="form-control rounded-0" id="inputChangeNeededValue">
+                  <div id="inputChangeNeededValueHelp" class="form-text"><span class="text-muted">
+                      <u><i>Digite aqui quanto você precisa de troco. Ex: R$2,50</i></u>
+                    </span></div>
+                </div>
+                <button onclick="completeOrderRedirectToShopWhatsapp()"
+                  class="btn btn-outline-success rounded-0 border-2 col-8 col-lg-3 col-xl-3">Concluir Pedido</button>
+                <div class="alert alert-danger rounded-0 user-select-none mt-3 col-11 col-lg-12 col-xl-12" role="alert">
+                  <h4 class="text-center fw-bolder">Atenção!</h4>
+                  <h5 class="px-0 px-lg-5 px-xl-5" style="text-align: justify;">
+                    Alterar a mensagem com o pedido pode resultar no bloqueio automático do seu número. Este
+                    bloqueio
+                    impedirá futuras compras e o contato conosco até que seja desbloqueado no nosso sistema interno.
+                  </h5>
+                  <hr>
+                  <h6 class="px-0 px-lg-5 px-xl-5" style="text-align: justify;">
+                    Se precisar fornecer mais informações sobre a entrega ou adicionar observações ao pedido, por favor,
+                    envie-nos uma
+                    nova mensagem após o envio do pedido.
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -335,15 +373,13 @@
           <button class="btn btn-success rounded-0 p-2" id="buttonCompleteOrder" data-bs-toggle="modal"
             data-bs-target="#modalCompleteOrder">
             <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-              Finalizar
-              Pedido
+              Solicitar Entrega
             </span>
           </button>
         </div>
       </div>
     </div>
   </div>
-
 
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol fill="rgb(58, 14, 67)" id="facebook" viewBox="0 0 16 16">

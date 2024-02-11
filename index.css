@@ -22,6 +22,11 @@ li {
 }
 
 
+.customer-saved-addresses {
+  max-height: 380px;
+  overflow-y: auto;
+}
+
 .btn-purple2,
 .btn-purple2:hover,
 .btn-purple2:active,
@@ -41,8 +46,18 @@ li {
   color: rgb(var(--bd-pink-rgb));
 }
 
+.nav-link:hover {
+  color: rgb(var(--bd-pink-rgb)) !important;
+}
+
+
+.nav-link[disabled] {
+  color: gray;
+}
+
 .nav-link.active {
   color: rgb(var(--bd-pink-rgb)) !important;
+  text-decoration: underline;
 }
 
 * {
