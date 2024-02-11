@@ -2,7 +2,7 @@
 
 Bem-vindo à P'Açaí! 🌟
 
-![Logo P'Açaí](https://pacai.shop/assets/acai-icon.png)
+![Logo P'Açaí](https://pacai.shop/assets/acai-icon-192.png)
 
 ## Sobre Nós
 
