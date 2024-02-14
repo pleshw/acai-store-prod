@@ -158,3 +158,7 @@ nav {
   font-size: 10px !important;
   user-select: none !important;
 }
+
+.cursor-pointer {
+  cursor: pointer !important;
+}

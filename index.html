@@ -265,6 +265,13 @@
                       </div>
                     </div>
                     <div class="mb-3">
+                      <label for="inputDeliveryInfoReferencePoint" class="form-label">Ponto de referência</label>
+                      <input type="text" class="form-control rounded-0" id="inputDeliveryInfoReferencePoint">
+                      <div id="inputDeliveryInfoHelpReferencePoint" class="form-text"><span class="text-muted">
+                          <u><i>Insira um ponto de referência. Ex: Perto do posto de saúde.</i></u>
+                        </span></div>
+                    </div>
+                    <div class="mb-3">
                       <label for="inputDeliveryInfoName" class="form-label">Seu nome</label>
                       <input type="text" class="form-control rounded-0" id="inputDeliveryInfoName">
                       <div id="inputDeliveryInfoHelpName" class="form-text"><span class="text-muted">
@@ -330,8 +337,24 @@
                   <label for="inputChangeNeededValue" class="form-label">Troco (Opcional)</label>
                   <input type="text" class="form-control rounded-0" id="inputChangeNeededValue">
                   <div id="inputChangeNeededValueHelp" class="form-text"><span class="text-muted">
-                      <u><i>Digite aqui quanto você precisa de troco. Ex: R$2,50</i></u>
+                      <u><i>Troco para quanto?</i></u>
                     </span></div>
+                </div>
+
+                <div id="pixKeyContainer" class="mb-3 border p-5 col-11 col-lg-12 col-xl-12 shadow shadow-md">
+                  <label for="inputCopyPixToClipboardValue" class="form-label">
+                    Chave Pix
+                    <span class="text-muted fw-bolder">
+                      <small>(Clique para copiar)</small>
+                    </span>
+                  </label>
+                  <input type="text" class="form-control rounded-0 cursor-pointer" value="84991436378"
+                    id="inputCopyPixToClipboardValue">
+                  <div id="inputCopyPixToClipboardValueHelp" class="form-text">
+                    <span class="text-muted">
+                      <u><i>Envie o recibo do pagamento após confirmar o pedido.</i></u>
+                    </span>
+                  </div>
                 </div>
                 <button onclick="completeOrderRedirectToShopWhatsapp()"
                   class="btn btn-outline-success rounded-0 border-2 col-8 col-lg-3 col-xl-3">Concluir Pedido</button>
