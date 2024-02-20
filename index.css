@@ -157,8 +157,30 @@ nav {
 .addon-price {
   font-size: 10px !important;
   user-select: none !important;
+  transform: translate(0, -10px);
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.addon-price.show {
+  transform: translate(0, 0px);
+  opacity: 1;
 }
 
 .cursor-pointer {
   cursor: pointer !important;
+}
+
+.alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  z-index: 2000;
+}
+
+.alert.show {
+  opacity: 1;
 }
